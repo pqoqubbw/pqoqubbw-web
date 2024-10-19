@@ -2,6 +2,7 @@
 
 import { AppThemeSwitcher } from "@/components/theme";
 
+import { useOpenPanel } from "@openpanel/nextjs";
 import {
   FileTextIcon,
   GitHubLogoIcon,
@@ -9,9 +10,9 @@ import {
   TwitterLogoIcon,
 } from "@radix-ui/react-icons";
 
-import { op } from "../analytics/openpanel";
-
 const Footer = () => {
+  const op = useOpenPanel();
+
   return (
     <div className="flex w-full min-[460px]:items-center min-[460px]:flex-row flex-col gap-4 min-[460px]:justify-between border-border border-t pt-2">
       <div className="flex items-center gap-4 text-small text-kbd-foreground">

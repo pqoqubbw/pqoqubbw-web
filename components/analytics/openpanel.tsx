@@ -1,9 +1,4 @@
-import { OpenPanel, OpenPanelComponent } from "@openpanel/nextjs";
-
-export const op = new OpenPanel({
-  clientId: process.env.CLIENT_ID!,
-  clientSecret: process.env.CLIENT_SECRET!,
-});
+import { OpenPanelComponent } from "@openpanel/nextjs";
 
 const Openpanel = () => {
   if (process.env.NODE_ENV !== "production") return null;
