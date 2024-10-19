@@ -3,13 +3,10 @@
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 
-const specialChars = "!@#$%^&*()_+-=[]{}|;:,.<>?";
+const characters =
+  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+";
 
-export function Encryption({
-  text = "Секретное сообщение",
-}: {
-  text?: string;
-}) {
+function Encryption({ text = "Секретное сообщение" }: { text?: string }) {
   const [encryptedText, setEncryptedText] = useState(text);
 
   useEffect(() => {
@@ -17,13 +14,11 @@ export function Encryption({
       setEncryptedText((prevText) =>
         prevText
           .split("")
-          .map((char, index) => {
-            if (char === " ") return " ";
-            if (Math.random() < 0.5) return char;
-            return specialChars[
-              Math.floor(Math.random() * specialChars.length)
-            ];
-          })
+          .map((char) =>
+            Math.random() > 0.5
+              ? characters[Math.floor(Math.random() * characters.length)]
+              : char,
+          )
           .join(""),
       );
     }, 100);
@@ -32,22 +27,15 @@ export function Encryption({
   }, []);
 
   return (
-    <motion.div
+    <motion.p
       className="font-mono text-sm"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
+      transition={{ duration: 0.5 }}
     >
-      {encryptedText.split("").map((char, index) => (
-        <motion.span
-          key={index}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: index * 0.05 }}
-        >
-          {char}
-        </motion.span>
-      ))}
-    </motion.div>
+      {encryptedText}
+    </motion.p>
   );
 }
+
+export { Encryption };
