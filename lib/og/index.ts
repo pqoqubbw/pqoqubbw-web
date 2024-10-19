@@ -8,7 +8,7 @@ export const OpenGraph: Metadata = {
     default: "pqoqubbw",
     template: "%s",
   },
-  description: "...",
+  description: "trying to make the web a better place",
   keywords: ["Design", "Development", "Engineering"],
   openGraph: {
     type: "website",
@@ -16,14 +16,14 @@ export const OpenGraph: Metadata = {
     url: process.env.NEXT_PUBLIC_SITE_URL,
     title: "pqoqubbw",
     description: "...",
-    images: [`${process.env.NEXT_PUBLIC_SITE_URL}api/og`],
+    images: [`${process.env.NEXT_PUBLIC_SITE_URL}/api/og`],
     siteName: "pqoqubbw",
   },
   twitter: {
     card: "summary_large_image",
     title: "pqoqubbw",
-    description: "...",
-    images: [`${process.env.NEXT_PUBLIC_SITE_URL}api/og`],
+    description: "trying to make the web a better place",
+    images: [`${process.env.NEXT_PUBLIC_SITE_URL}/api/og`],
   },
   robots: {
     index: true,
