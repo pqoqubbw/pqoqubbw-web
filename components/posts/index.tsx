@@ -11,11 +11,13 @@ interface PostProps {
 }
 
 export const Posts = ({ category }: PostProps) => {
-  const posts = getPosts(category).sort((a, b) => {
-    return (
-      new Date(b.time.created).getTime() - new Date(a.time.created).getTime()
-    );
-  });
+  // const posts = getPosts(category).sort((a, b) => {
+  //   return (
+  //     new Date(b.time.created).getTime() - new Date(a.time.created).getTime()
+  //   );
+  // });
+
+  const posts = [];
 
   const Seperator = () => <div className="border-border border-t" />;
 
