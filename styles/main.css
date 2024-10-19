@@ -12,6 +12,7 @@
 @import url("@radix-ui/colors/yellow-dark-alpha.css");
 @import url("@radix-ui/colors/black-alpha.css");
 @import url("@radix-ui/colors/white-alpha.css");
+@import url("@radix-ui/colors/purple.css");
 
 @tailwind base;
 @tailwind components;
@@ -30,8 +31,8 @@
     --border: var(--gray-4);
     --scrollbar-thumb: var(--gray-4);
     --scrollbar-track: transparent;
-    --selection-background: var(--pink-3);
-    --selection-foreground: var(--pink-11);
+    --selection-background: var(--purple-11);
+    --selection-foreground: var(--purple-3);
     --kbd-background: var(--gray-3);
     --kbd-foreground: var(--gray-11);
     --kbd-border: var(--gray-4);

@@ -24,9 +24,6 @@ export const Layout = ({ post, route }: Props) => {
   const PublishedTime = () => {
     return <div>Published {formatter.date(new Date(post.time.created))}</div>;
   };
-  const UpdateTime = () => {
-    return <div>Updated {formatter.date(new Date(post.time.updated))}</div>;
-  };
 
   const ReadingTime = () => {
     return <div>{readingTime(post.content).minutes} minutes read</div>;
@@ -40,8 +37,6 @@ export const Layout = ({ post, route }: Props) => {
         </div>
         <div className="mt-1 flex gap-2 text-muted text-small">
           <PublishedTime />
-          <Seperator />
-          <UpdateTime />
           <Seperator />
           <ReadingTime />
         </div>

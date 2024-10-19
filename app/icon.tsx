@@ -1,4 +1,3 @@
-import { gray } from "@radix-ui/colors";
 import { ImageResponse } from "next/og";
 
 export const size = {
@@ -9,30 +8,30 @@ export const contentType = "image/png";
 
 export default function Icon() {
   return new ImageResponse(
-    <div
-      style={{
-        background: gray.gray8,
-        width: "100%",
-        height: "100%",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        borderRadius: 100,
-        padding: 4,
-      }}
-    >
+    (
       <div
         style={{
-          background: gray.gray12,
           width: "100%",
           height: "100%",
+          borderRadius: "50%",
+          backgroundColor: "#7365BC",
           display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          borderRadius: 100,
+          flexWrap: "wrap",
+          overflow: "hidden",
         }}
-      />
-    </div>,
+      >
+        {Array.from({ length: 36 }).map((_, index) => (
+          <div
+            key={index}
+            style={{
+              width: "16.666%",
+              height: "16.666%",
+              border: "1px solid rgba(255, 255, 255, 0.2)",
+            }}
+          />
+        ))}
+      </div>
+    ),
     {
       ...size,
     },
