@@ -1,3 +1,5 @@
+"use client";
+
 import { AppThemeSwitcher } from "@/components/theme";
 
 import {
