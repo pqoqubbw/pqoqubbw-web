@@ -1,3 +1,4 @@
+import { FlickeringGrid } from "@/components/flickering";
 import { Footer } from "@/components/footer";
 import * as FadeIn from "@/components/motion/staggers/fade";
 import { Posts } from "@/components/posts";
@@ -27,6 +28,18 @@ export default function Home() {
           are not just visually appealing but also highly functional.
         </p>
       </FadeIn.Item>
+      <Spacer />
+      <FadeIn.Item>
+        <FlickeringGrid
+          color="#8145b5"
+          gridGap={8}
+          squareSize={15}
+          flickerChance={0.2}
+          height={100}
+          maxOpacity={0.8}
+        />
+      </FadeIn.Item>
+      <Spacer />
       <FadeIn.Item>
         <Posts category="examples" />
       </FadeIn.Item>
