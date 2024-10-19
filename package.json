@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm run lint && npm run mdx:timestamps && next build",
+    "build-old": "npm run lint && npm run mdx:timestamps && next build",
+    "build": "next build",
     "start": "next start",
     "postbuild": "next-sitemap",
     "mdx:timestamps": "node ./scripts/update-mdx-timestamps",
@@ -62,6 +63,7 @@
     "@types/node": "^22.7.6",
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.1",
+    "autoprefixer": "^10.4.20",
     "eslint": "^9.12.0",
     "eslint-config-next": "14.2.15",
     "postcss": "^8.4.47",
