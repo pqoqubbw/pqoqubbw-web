@@ -7,6 +7,8 @@ import {
   TwitterLogoIcon,
 } from "@radix-ui/react-icons";
 
+import { op } from "../analytics/openpanel";
+
 const Footer = () => {
   return (
     <div className="flex w-full min-[460px]:items-center min-[460px]:flex-row flex-col gap-4 min-[460px]:justify-between border-border border-t pt-2">
@@ -15,6 +17,7 @@ const Footer = () => {
           href="https://www.linkedin.com/in/pqoqubbw/"
           target="_blank"
           className="flex items-center gap-1"
+          onClick={() => op.track("linkedin")}
         >
           <LinkedInLogoIcon />
           linkedin
@@ -23,6 +26,7 @@ const Footer = () => {
           href="https://read.cv/pqoqubbw"
           target="_blank"
           className="flex items-center gap-1"
+          onClick={() => op.track("resume")}
         >
           <FileTextIcon />
           resume
@@ -31,6 +35,7 @@ const Footer = () => {
           href="https://github.com/pqoqubbw"
           target="_blank"
           className="flex items-center gap-1"
+          onClick={() => op.track("github")}
         >
           <GitHubLogoIcon />
           github
@@ -39,6 +44,7 @@ const Footer = () => {
           href="https://x.com/pqoqubbw"
           target="_blank"
           className="flex items-center gap-1"
+          onClick={() => op.track("twitter")}
         >
           <TwitterLogoIcon />
           twitter

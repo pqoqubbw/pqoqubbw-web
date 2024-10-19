@@ -617,6 +617,25 @@
   resolved "https://registry.yarnpkg.com/@nolyfill/is-core-module/-/is-core-module-1.0.39.tgz#3dc35ba0f1e66b403c00b39344f870298ebb1c8e"
   integrity sha512-nn5ozdjYQpUCZlWGuxcJY/KpxkWQs4DcbMCmKojjyrYDEAGy4Ce19NN4v5MduafTwJlbKc99UA8YhSVqq9yPZA==
 
+"@openpanel/nextjs@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@openpanel/nextjs/-/nextjs-1.0.5.tgz#637b17a8ff958517f3ec86f1520e50b996001c81"
+  integrity sha512-+Zdrl5fC8Iczub/pVvX8Xp9q6mQvApNXGenCEkdiAZk9nT7xpaLfzkdHnwx7XHxp5H50zdwgqWDGiwLMqRWjKA==
+  dependencies:
+    "@openpanel/web" "1.0.1"
+
+"@openpanel/sdk@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@openpanel/sdk/-/sdk-1.0.0.tgz#f92a40a9f8accc855e1d063182751f8e9eab469f"
+  integrity sha512-FNmmfjdXoC/VHEjA+WkrQ4lyM5lxEmV7xDd57uj4E+lIS0sU3DLG2mV/dpS8AscnZbUvuMn3kPhiLCqYzuv/gg==
+
+"@openpanel/web@1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@openpanel/web/-/web-1.0.1.tgz#2a42668966aca8a604659941fb3d4f398174f238"
+  integrity sha512-cVZ7Kr9SicczJ/RDIfEtZs8+1iGDzwkabVA/j3NqSl8VSucsC8m1+LVbjmCDzCJNnK4yVn6tEcc9PJRi2rtllw==
+  dependencies:
+    "@openpanel/sdk" "1.0.0"
+
 "@pkgjs/parseargs@^0.11.0":
   version "0.11.0"
   resolved "https://registry.yarnpkg.com/@pkgjs/parseargs/-/parseargs-0.11.0.tgz#a77ea742fab25775145434eb1d2328cf5013ac33"
