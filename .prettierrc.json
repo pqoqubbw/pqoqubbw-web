@@ -1,4 +1,18 @@
 {
   "plugins": ["@ianvs/prettier-plugin-sort-imports"],
-  "importOrder": ["<TYPES>^(node:)", "", "<TYPES>", "", "<TYPES>^[.]", "", "@/(.*)$", "", "<BUILTIN_MODULES>", "", "<THIRD_PARTY_MODULES>", "", "^[.]"]
+  "importOrder": [
+    "<TYPES>^(node:)",
+    "",
+    "<TYPES>",
+    "",
+    "<TYPES>^[.]",
+    "",
+    "@/(.*)$",
+    "",
+    "<BUILTIN_MODULES>",
+    "",
+    "<THIRD_PARTY_MODULES>",
+    "",
+    "^[.]"
+  ]
 }

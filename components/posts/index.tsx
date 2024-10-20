@@ -11,17 +11,15 @@ interface PostProps {
 }
 
 export const Posts = ({ category }: PostProps) => {
-  // const posts = getPosts(category).sort((a, b) => {
-  //   return (
-  //     new Date(b.time.created).getTime() - new Date(a.time.created).getTime()
-  //   );
-  // });
-
-  const posts = [];
+  const posts = getPosts(category).sort((a, b) => {
+    return (
+      new Date(b.time.created).getTime() - new Date(a.time.created).getTime()
+    );
+  });
 
   const Seperator = () => <div className="border-border border-t" />;
 
-  if (true) {
+  if (posts.length === 0) {
     return (
       <div className="mt-6 flex flex-col">
         <h2 className="py-2 text-muted capitalize">

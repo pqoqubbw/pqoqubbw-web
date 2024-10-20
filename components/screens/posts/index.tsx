@@ -6,7 +6,7 @@ import { formatter } from "@/lib/formatter";
 import { getPosts } from "@/lib/mdx";
 import { MDX } from "@/mdx-components";
 
-import React from "react";
+import React, { Fragment } from "react";
 import { readingTime } from "reading-time-estimator";
 
 interface Props {
@@ -26,7 +26,16 @@ export const Layout = ({ post, route }: Props) => {
   };
 
   const ReadingTime = () => {
-    return <div>{readingTime(post.content).minutes} minutes read</div>;
+    const minutes = readingTime(post.content).minutes;
+
+    if (minutes === 0) return null;
+
+    return (
+      <Fragment>
+        <Seperator />
+        <div>{minutes} minutes read</div>
+      </Fragment>
+    );
   };
 
   return (
@@ -37,7 +46,6 @@ export const Layout = ({ post, route }: Props) => {
         </div>
         <div className="mt-1 flex gap-2 text-muted text-small">
           <PublishedTime />
-          <Seperator />
           <ReadingTime />
         </div>
       </div>
