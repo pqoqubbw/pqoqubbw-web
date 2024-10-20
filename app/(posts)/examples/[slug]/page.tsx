@@ -25,7 +25,7 @@ export function generateMetadata({ params }: PageProps) {
     (post: { slug: string }) => post.slug === params.slug,
   );
   const title = post ? post.title : "";
-  const image = `${process.env.NEXT_PUBLIC_SITE_URL}api/og?title=${encodeURIComponent(title)}`;
+  const image = `${process.env.NEXT_PUBLIC_SITE_URL}/api/og?title=${encodeURIComponent(title)}`;
 
   return {
     ...OpenGraph,
