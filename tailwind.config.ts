@@ -155,6 +155,7 @@ const config: Config = {
     },
   },
   plugins: [
+    require("tailwindcss-animate"),
     plugin(({ addUtilities }) => {
       addUtilities({
         ".text-small": {
