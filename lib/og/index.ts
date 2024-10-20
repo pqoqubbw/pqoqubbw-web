@@ -15,9 +15,9 @@ export const OpenGraph: Metadata = {
     locale: "en_US",
     url: process.env.NEXT_PUBLIC_SITE_URL,
     title: "pqoqubbw",
-    description: "...",
+    description: "trying to make the web a better place",
     images: [`${process.env.NEXT_PUBLIC_SITE_URL}/api/og`],
-    siteName: "pqoqubbw",
+    siteName: "pqoqubbw.dev",
   },
   twitter: {
     card: "summary_large_image",

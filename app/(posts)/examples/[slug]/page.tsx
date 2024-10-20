@@ -4,6 +4,7 @@ import { Layout } from "@/components/screens/posts";
 import { getPosts } from "@/lib/mdx";
 import { OpenGraph } from "@/lib/og";
 
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 const route = "examples";
@@ -20,7 +21,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export function generateMetadata({ params }: PageProps) {
+export function generateMetadata({ params }: PageProps): Metadata {
   const post = Posts.find(
     (post: { slug: string }) => post.slug === params.slug,
   );
@@ -31,10 +32,13 @@ export function generateMetadata({ params }: PageProps) {
     ...OpenGraph,
     title,
     openGraph: {
+      ...OpenGraph.openGraph,
+      url: `${process.env.NEXT_PUBLIC_SITE_URL}/examples/${post?.slug!}`,
       title,
       images: [image],
     },
     twitter: {
+      ...OpenGraph.twitter,
       images: [image],
     },
   };
