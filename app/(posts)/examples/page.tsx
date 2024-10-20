@@ -11,9 +11,7 @@ export function generateMetadata() {
 
   return {
     ...OpenGraph,
-    category,
     openGraph: {
-      category,
       images: [image],
     },
     twitter: {
