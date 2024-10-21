@@ -93,13 +93,34 @@ export const TimeTooltip = ({ value }: { value: string | number }) => {
   const relative = timestampRelativeFormatter(value);
   const localTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
+  const handleOutsideClick = (event: MouseEvent | TouchEvent) => {
+    if (
+      open &&
+      !(event.target as HTMLElement)?.closest(".time-tooltip-content")
+    ) {
+      setOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleOutsideClick);
+    document.addEventListener("touchstart", handleOutsideClick);
+
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+      document.removeEventListener("touchstart", handleOutsideClick);
+    };
+  }, [open]);
+
   return (
     <TooltipProvider delayDuration={200}>
       <Tooltip open={open} onOpenChange={setOpen}>
         <TooltipTrigger
           onClick={(event) => {
             event.preventDefault();
-            setOpen(true);
+            if (!open) {
+              setOpen(true);
+            }
           }}
           onTouchEnd={(event) => {
             event.preventDefault();
@@ -111,7 +132,7 @@ export const TimeTooltip = ({ value }: { value: string | number }) => {
         </TooltipTrigger>
         <TooltipContent
           sticky="always"
-          className="font-mono flex flex-col justify-center w-[300px]"
+          className="font-mono flex flex-col justify-center w-[300px] time-tooltip-content"
         >
           <TooltipRow label="UTC" value={utc} />
           <TooltipRow label={`${localTimezone}`} value={local} />
