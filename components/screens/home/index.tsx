@@ -18,14 +18,14 @@ export default function Home() {
       </FadeIn.Item>
       <Spacer />
       <FadeIn.Item>
-        <p>
+        <p className="text-pretty">
           hey, i'm dmytro and i'm a developer who works on both frontend and
           backend, but my true passion lies in design engineering. i love
           focusing on user experience, paying close attention to every detail,
           and creating beautiful and intuitive interfaces that blend aesthetics
           with usability.
         </p>
-        <p>
+        <p className="text-pretty">
           here i'll be sharing components that catch my eye and ones i've
           crafted myself, always striving to create experiences that are not
           just visually appealing but also highly functional.

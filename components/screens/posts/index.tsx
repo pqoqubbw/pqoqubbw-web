@@ -2,6 +2,7 @@ import type { Post } from "@/types";
 
 import { TableOfContents } from "@/components/on-this-page";
 import { PostNavigation } from "@/components/post-navigation";
+import { AppThemeSwitcher } from "@/components/theme";
 import { formatter } from "@/lib/formatter";
 import { getPosts } from "@/lib/mdx";
 import { MDX } from "@/mdx-components";
@@ -40,13 +41,18 @@ export const Layout = ({ post, route }: Props) => {
 
   return (
     <React.Fragment>
-      <div className="flex flex-col">
-        <div>
-          <h1>{post.title}</h1>
+      <div className="flex justify-between items-end">
+        <div className="flex flex-col">
+          <div>
+            <h1>{post.title}</h1>
+          </div>
+          <div className="mt-1 flex gap-2 text-muted text-small">
+            <PublishedTime />
+            <ReadingTime />
+          </div>
         </div>
-        <div className="mt-1 flex gap-2 text-muted text-small">
-          <PublishedTime />
-          <ReadingTime />
+        <div>
+          <AppThemeSwitcher />
         </div>
       </div>
 

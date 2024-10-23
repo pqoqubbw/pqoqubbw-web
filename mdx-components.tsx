@@ -15,9 +15,13 @@ import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 
+import { MatrixBox } from "./examples/matrix-box";
 import { TimeTooltipPreview } from "./examples/time-tooltip";
 
 const components: MDXComponents = {
+  MatrixBox: () => {
+    return <MatrixBox valueName="You're cute" />;
+  },
   TimeTooltip: () => {
     return <TimeTooltipPreview />;
   },
@@ -45,6 +49,44 @@ const components: MDXComponents = {
       return null;
     }
     return <h2 id={id}>{children}</h2>;
+  },
+  p: ({
+    children,
+    className,
+    ...props
+  }: React.HTMLAttributes<HTMLParagraphElement>) => {
+    return (
+      <p className={cn("text-pretty", className)} {...props}>
+        {children}
+      </p>
+    );
+  },
+  A: ({ children, href }) => {
+    return (
+      <Link
+        href={href}
+        target="_blank"
+        underline
+        className="decoration-foreground inline-flex items-center gap-1"
+      >
+        {children}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="10"
+          height="10"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M15 3h6v6" />
+          <path d="M10 14 21 3" />
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+        </svg>
+      </Link>
+    );
   },
   a: ({ children, href }) => {
     if (href?.startsWith("#user-content-fn-")) {
