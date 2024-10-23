@@ -34,10 +34,10 @@ export function MatrixBox({ valueName }: ValueTitleProps) {
       setLetters((prevLetters) => {
         const newLetters = [...prevLetters];
         const letter = newLetters[index];
-        const newHighlighted = Math.random() > 0.9; // 10% chance to be highlighted
+        const newHighlighted = Math.random() > 0.96; // 10% chance to be highlighted
         newLetters[index] = {
           char:
-            newHighlighted && Math.random() < 0.15
+            newHighlighted && Math.random() < 0.1
               ? getRandomChar()
               : letter.char, // 15% chance to change if highlighted
           highlighted: newHighlighted,
@@ -63,7 +63,7 @@ export function MatrixBox({ valueName }: ValueTitleProps) {
     for (let i = 0; i < ITEMS_COUNT; i++) {
       const intervalId = setInterval(
         () => updateLetter(i),
-        Math.random() * 2000 + 1000,
+        Math.random() * 2000,
       ); // Random interval between 1-3 seconds
       intervals.push(intervalId);
     }
@@ -81,8 +81,8 @@ export function MatrixBox({ valueName }: ValueTitleProps) {
               initial="initial"
               animate="animate"
               exit="exit"
-              transition={{ duration: 0.2 }}
-              className={`inline-block transition-all select-none duration-200 ${
+              transition={{ duration: 0.1 }}
+              className={`inline-block transition-all select-none duration-750 ${
                 letter.highlighted ? "opacity-30" : "opacity-10"
               }`}
             >
