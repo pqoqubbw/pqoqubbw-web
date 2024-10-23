@@ -1,7 +1,5 @@
 "use client";
 
-import { cn } from "@/lib/cn";
-
 import { AnimatePresence, motion } from "framer-motion";
 import { useCallback, useEffect, useState } from "react";
 
@@ -95,10 +93,7 @@ export function MatrixBox({ valueName }: ValueTitleProps) {
       </div>
       <div className="absolute inset-0 flex font-bold items-center justify-center text-center text-white whitespace-pre">
         {valueName.split("").map((char, index) => (
-          <span
-            key={index}
-            className={cn("inline-block", char !== " " && "!bg-background")}
-          >
+          <span key={index} className="inline-block relative">
             {char}
           </span>
         ))}
