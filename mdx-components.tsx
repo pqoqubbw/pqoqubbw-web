@@ -42,8 +42,11 @@ const components: MDXComponents = {
       </div>
     );
   },
-  Preview: ({ children, codeblock, style }) => (
-    <Preview codeblock={codeblock ? codeblock : undefined} style={style}>
+  Preview: ({ children, codeblock, className }) => (
+    <Preview
+      codeblock={codeblock ? codeblock : undefined}
+      className={className}
+    >
       {children}
     </Preview>
   ),
