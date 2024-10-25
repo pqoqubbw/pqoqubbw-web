@@ -7,6 +7,7 @@ import FootnoteForwardReference from "@/components/footnote/forward-reference";
 import MDXImage from "@/components/image";
 import Link from "@/components/link";
 import Preview from "@/components/preview";
+import { MicroInteractions } from "@/examples/micro-interactions";
 import { cn } from "@/lib/cn";
 
 import { MDXRemote } from "next-mdx-remote/rsc";
@@ -19,6 +20,9 @@ import { MatrixBox } from "./examples/matrix-box";
 import { TimeTooltipPreview } from "./examples/time-tooltip";
 
 const components: MDXComponents = {
+  MicroInteractions: () => {
+    return <MicroInteractions />;
+  },
   MatrixBox: () => {
     return <MatrixBox valueName="You're cute" />;
   },
@@ -38,8 +42,10 @@ const components: MDXComponents = {
       </div>
     );
   },
-  Preview: ({ children, codeblock }) => (
-    <Preview codeblock={codeblock ? codeblock : undefined}>{children}</Preview>
+  Preview: ({ children, codeblock, style }) => (
+    <Preview codeblock={codeblock ? codeblock : undefined} style={style}>
+      {children}
+    </Preview>
   ),
   Image: ({ caption, alt, ...props }) => (
     <MDXImage {...props} caption={caption} alt={alt} />

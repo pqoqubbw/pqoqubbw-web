@@ -8,10 +8,12 @@ const Preview = ({
   children,
   codeblock,
   className,
+  style,
 }: React.HTMLAttributes<HTMLDivElement> & { codeblock?: string }) => (
   <figure
     data-with-codeblock={codeblock}
     className={cn(styles.preview, className)}
+    style={style}
   >
     {children}
   </figure>
