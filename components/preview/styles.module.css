@@ -13,6 +13,7 @@
     border-color: var(--border);
     border-width: 1px;
     border-radius: var(--radius-base);
+    position: relative;
 
     &[data-with-codeblock="true"] {
       border-bottom-right-radius: 0;

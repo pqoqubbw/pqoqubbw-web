@@ -1,21 +1,37 @@
 "use client";
 
+import { cn } from "@/lib/cn";
+
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-const RefreshIcon = () => {
+const RefreshIcon = ({
+  className,
+  width = 24,
+  height = 24,
+  onClick,
+}: {
+  className?: string;
+  width?: number;
+  height?: number;
+  onClick?: () => void;
+}) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <motion.div
-      className="hover:bg-gray-a3  size-11 cursor-pointer rounded-md transition-colors duration-200 flex items-center justify-center"
+      className={cn(
+        "hover:bg-gray-a3 size-11 cursor-pointer rounded-md transition-colors duration-200 flex items-center justify-center",
+        className,
+      )}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onClick={onClick}
     >
       <motion.svg
         xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
+        width={width}
+        height={height}
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"

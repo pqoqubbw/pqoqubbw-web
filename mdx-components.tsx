@@ -17,9 +17,13 @@ import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 
 import { MatrixBox } from "./examples/matrix-box";
+import { SVGDrawing } from "./examples/svg-drawing";
 import { TimeTooltipPreview } from "./examples/time-tooltip";
 
 const components: MDXComponents = {
+  SVGDrawing: () => {
+    return <SVGDrawing />;
+  },
   MicroInteractions: () => {
     return <MicroInteractions />;
   },
@@ -42,10 +46,11 @@ const components: MDXComponents = {
       </div>
     );
   },
-  Preview: ({ children, codeblock, className }) => (
+  Preview: ({ children, codeblock, className, withRefresh }) => (
     <Preview
       codeblock={codeblock ? codeblock : undefined}
       className={className}
+      withRefresh={withRefresh}
     >
       {children}
     </Preview>
