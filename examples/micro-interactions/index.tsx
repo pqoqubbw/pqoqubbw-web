@@ -1,17 +1,24 @@
 import { BellIcon } from "./icons/bell";
+import { ChartPieIcon } from "./icons/chart-pie";
 import { CursorClickIcon } from "./icons/cursor-click";
 import { DeleteIcon } from "./icons/delete";
 import { DownvoteIcon } from "./icons/downvote";
 import { EditIcon } from "./icons/edit";
 import { ExpandIcon } from "./icons/expand";
+import { FileStackIcon } from "./icons/file-stack";
+import { FingerprintIcon } from "./icons/fingerprint";
+import { GitPullRequestIcon } from "./icons/git-pull-request";
 import { GridIcon } from "./icons/grid";
 import { PartyPopperIcon } from "./icons/party-popper";
 import { RefreshIcon } from "./icons/refresh";
+import { RouteIcon } from "./icons/route";
 import { ScanTextIcon } from "./icons/scan-text";
 import { SettingsIcon } from "./icons/settings";
 import { SettingsGearIcon } from "./icons/settings-gear";
+import { SunIcon } from "./icons/sun";
 import { UnplugIcon } from "./icons/unplug";
 import { UpvoteIcon } from "./icons/upvote";
+import { VolumeIcon } from "./icons/volume";
 
 const MicroInteractions = () => {
   return (
@@ -33,6 +40,15 @@ const MicroInteractions = () => {
         <DeleteIcon />
         <BellIcon />
         <EditIcon />
+      </div>
+      <div className="flex sm:gap-4 gap-2 items-center flex-wrap">
+        <ChartPieIcon />
+        <GitPullRequestIcon />
+        <FileStackIcon />
+        <SunIcon />
+        <FingerprintIcon />
+        <RouteIcon />
+        <VolumeIcon />
       </div>
     </div>
   );
