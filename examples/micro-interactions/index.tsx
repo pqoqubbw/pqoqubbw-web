@@ -31,7 +31,7 @@ import { VolumeIcon } from "./icons/volume";
 const MicroInteractions = () => {
   return (
     <div className="flex flex-wrap sm:gap-4 gap-2 w-full h-full items-center flex-col justify-center">
-      <div className="flex sm:gap-4 gap-2 items-center flex-wrap">
+      <div className="flex sm:gap-4 gap-2 items-center flex-wrap justify-center">
         <UpvoteIcon />
         <DownvoteIcon />
         <RefreshIcon />
@@ -39,8 +39,6 @@ const MicroInteractions = () => {
         <GridIcon />
         <CursorClickIcon />
         <SettingsIcon />
-      </div>
-      <div className="flex sm:gap-4 gap-2 items-center flex-wrap">
         <SettingsGearIcon />
         <ExpandIcon />
         <UnplugIcon />
@@ -48,8 +46,6 @@ const MicroInteractions = () => {
         <DeleteIcon />
         <BellIcon />
         <EditIcon />
-      </div>
-      <div className="flex sm:gap-4 gap-2 items-center flex-wrap">
         <ChartPieIcon />
         <GitPullRequestIcon />
         <FileStackIcon />
@@ -57,8 +53,6 @@ const MicroInteractions = () => {
         <FingerprintIcon />
         <RouteIcon />
         <VolumeIcon />
-      </div>
-      <div className="flex sm:gap-4 gap-2 items-center flex-wrap">
         <HomeIcon />
         <FilePenLineIcon />
         <ArchiveIcon />
