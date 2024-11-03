@@ -8,12 +8,9 @@ import { CursorClickIcon } from "./icons/cursor-click";
 import { DeleteIcon } from "./icons/delete";
 import { DownvoteIcon } from "./icons/downvote";
 import { EditIcon } from "./icons/edit";
-import { ExpandIcon } from "./icons/expand";
 import { FilePenLineIcon } from "./icons/file-pen-line";
 import { FileStackIcon } from "./icons/file-stack";
 import { FingerprintIcon } from "./icons/fingerprint";
-import { GitPullRequestIcon } from "./icons/git-pull-request";
-import { GridIcon } from "./icons/grid";
 import { HandCoinsIcon } from "./icons/hand-coins";
 import { HomeIcon } from "./icons/home";
 import { PartyPopperIcon } from "./icons/party-popper";
@@ -30,24 +27,20 @@ import { VolumeIcon } from "./icons/volume";
 
 const MicroInteractions = () => {
   return (
-    <div className="flex flex-wrap sm:gap-4 gap-2 w-full h-full items-center flex-col justify-center">
+    <div className="flex flex-wrap w-full h-full items-center flex-col justify-center">
       <div className="flex sm:gap-4 gap-2 items-center flex-wrap justify-center">
         <UpvoteIcon />
         <DownvoteIcon />
         <RefreshIcon />
         <ScanTextIcon />
-        <GridIcon />
         <CursorClickIcon />
         <SettingsIcon />
         <SettingsGearIcon />
-        <ExpandIcon />
         <UnplugIcon />
         <PartyPopperIcon />
         <DeleteIcon />
         <BellIcon />
         <EditIcon />
-        <ChartPieIcon />
-        <GitPullRequestIcon />
         <FileStackIcon />
         <SunIcon />
         <FingerprintIcon />
@@ -63,6 +56,7 @@ const MicroInteractions = () => {
         <ChartPieIcon />
         <CircleDollarSignIcon />
       </div>
+      <p>and more...</p>
     </div>
   );
 };
