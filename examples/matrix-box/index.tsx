@@ -9,14 +9,14 @@ const letterVariants = {
   exit: { opacity: 0, y: 20 },
 };
 
-interface ValueTitleProps {
+type ValueTitleProps = {
   valueName: string;
-}
+};
 
-interface LetterState {
+type LetterState = {
   char: string;
   highlighted: boolean;
-}
+};
 
 const ITEMS_COUNT = 150;
 const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789%_+-";
@@ -34,12 +34,12 @@ export function MatrixBox({ valueName }: ValueTitleProps) {
       setLetters((prevLetters) => {
         const newLetters = [...prevLetters];
         const letter = newLetters[index];
-        const newHighlighted = Math.random() > 0.96; // 10% chance to be highlighted
+        const newHighlighted = Math.random() > 0.96;
         newLetters[index] = {
           char:
             newHighlighted && Math.random() < 0.1
               ? getRandomChar()
-              : letter.char, // 15% chance to change if highlighted
+              : letter.char,
           highlighted: newHighlighted,
         };
         return newLetters;
@@ -64,7 +64,7 @@ export function MatrixBox({ valueName }: ValueTitleProps) {
       const intervalId = setInterval(
         () => updateLetter(i),
         Math.random() * 2000,
-      ); // Random interval between 1-3 seconds
+      );
       intervals.push(intervalId);
     }
 

@@ -8,9 +8,11 @@ import { Monitor, Moon, Sun } from "lucide-react";
 import { ThemeProvider, useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
+type Theme = "system" | "dark" | "light";
+
 export const AppThemeSwitcher = () => {
   const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
+  const { theme: currentTheme, setTheme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
@@ -22,11 +24,26 @@ export const AppThemeSwitcher = () => {
     {
       label: "system",
       icon: <Monitor width={13} />,
-      active: theme === "system",
+      active: currentTheme === "system",
     },
-    { label: "dark", icon: <Moon width={13} />, active: theme === "dark" },
-    { label: "light", icon: <Sun width={13} />, active: theme === "light" },
+    {
+      label: "dark",
+      icon: <Moon width={13} />,
+      active: currentTheme === "dark",
+    },
+    {
+      label: "light",
+      icon: <Sun width={13} />,
+      active: currentTheme === "light",
+    },
   ];
+
+  const handleChangeTheme = (theme: Theme) => {
+    if (theme === currentTheme) return;
+
+    if (!document.startViewTransition) return setTheme(theme);
+    document.startViewTransition(() => setTheme(theme));
+  };
 
   return (
     <span className="flex w-fit items-center gap-0.5 overflow-hidden rounded-[6px] bg-gray-2 p-[2px]">
@@ -34,7 +51,7 @@ export const AppThemeSwitcher = () => {
         <button
           type="button"
           key={label}
-          onClick={() => setTheme(label)}
+          onClick={() => handleChangeTheme(label as Theme)}
           className={cn(
             "ransition-all flex h-6 w-6 items-center justify-center rounded-[4px] hover:opacity-50",
             active ? "bg-gray-4 text-foreground" : "",

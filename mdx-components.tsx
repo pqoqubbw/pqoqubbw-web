@@ -16,11 +16,15 @@ import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 
+import { ThreeDCard } from "./examples/3d-card";
 import { MatrixBox } from "./examples/matrix-box";
 import { SVGDrawing } from "./examples/svg-drawing";
 import { TimeTooltipPreview } from "./examples/time-tooltip";
 
 const components: MDXComponents = {
+  ThreeDCard: () => {
+    return <ThreeDCard />;
+  },
   SVGDrawing: () => {
     return <SVGDrawing />;
   },
