@@ -21,7 +21,7 @@ const TextWithImage = forwardRef<HTMLDivElement, Props>(
 
     return (
       <h3
-        className="text-4xl flex items-center gap-2 text-[#1F1F1F] dark:text-[#ffffff]"
+        className="text-3xl flex items-center gap-2 text-[#1F1F1F] dark:text-[#ffffff]"
         ref={containerRef}
       >
         <motion.span
