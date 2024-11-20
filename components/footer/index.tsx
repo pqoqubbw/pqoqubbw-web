@@ -26,7 +26,7 @@ const Footer = () => {
           linkedin
         </a>
         <a
-          href="https://read.cv/pqoqubbw"
+          href="https://dmytro.cv"
           target="_blank"
           className="flex items-center gap-1"
           onClick={() => op.track("resume")}
