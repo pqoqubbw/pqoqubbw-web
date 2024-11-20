@@ -5,8 +5,6 @@ import Preview from "@/components/preview";
 import { motion, useInView, UseInViewOptions } from "framer-motion";
 import { forwardRef, ReactNode, RefObject, useRef } from "react";
 
-const BLOCK_WIDTH = 90;
-
 type Props = Pick<UseInViewOptions, "margin"> & {
   children: ReactNode;
   text: [string, string];
@@ -27,7 +25,7 @@ const TextWithImage = forwardRef<HTMLDivElement, Props>(
         ref={containerRef}
       >
         <motion.span
-          animate={{ x: isInView ? 0 : BLOCK_WIDTH / 2 }}
+          animate={{ x: isInView ? 0 : 45 }}
           transition={{
             type: "spring",
             stiffness: 125,
@@ -38,7 +36,7 @@ const TextWithImage = forwardRef<HTMLDivElement, Props>(
           {text[0]}
         </motion.span>
         <motion.div
-          className={`w-[${BLOCK_WIDTH}px] h-[50px] rounded-md overflow-hidden flex items-center justify-center`}
+          className="w-[90px] h-[50px] rounded-md overflow-hidden flex items-center justify-center"
           initial={{ scale: 0 }}
           animate={{
             scale: isInView ? 1 : 0,
@@ -51,7 +49,7 @@ const TextWithImage = forwardRef<HTMLDivElement, Props>(
           {children}
         </motion.div>
         <motion.span
-          animate={{ x: isInView ? 0 : -BLOCK_WIDTH / 2 }}
+          animate={{ x: isInView ? 0 : -45 }}
           transition={{
             type: "spring",
             stiffness: 125,
@@ -81,21 +79,15 @@ const TextWithImageExample = () => {
             text={["cats", "rule"]}
             ref={root}
           >
-            <div
-              style={{
-                width: "100%",
-                height: 0,
-                paddingBottom: "75%",
-                position: "relative",
-              }}
-            >
-              <iframe
-                src="https://giphy.com/embed/cBncDNrdxga2I"
-                width="100%"
-                height="100%"
-                style={{ position: "absolute" }}
-                frameBorder="0"
-              />
+            <div className="w-full relative h-0 pb-[75%]">
+              <span className="pointer-events-none absolute inset-0">
+                <iframe
+                  src="https://giphy.com/embed/cBncDNrdxga2I"
+                  width="100%"
+                  height="100%"
+                  className="absolute border-none"
+                />
+              </span>
             </div>
           </TextWithImage>
           <TextWithImage
@@ -103,21 +95,15 @@ const TextWithImageExample = () => {
             text={["everyone", "loves"]}
             ref={root}
           >
-            <div
-              style={{
-                width: "100%",
-                height: 0,
-                paddingBottom: "57%",
-                position: "relative",
-              }}
-            >
-              <iframe
-                src="https://giphy.com/embed/QKSXTlCRK0r1N2NnkV"
-                width="100%"
-                height="100%"
-                style={{ position: "absolute" }}
-                frameBorder="0"
-              />
+            <div className="w-full relative h-0 pb-[57%]">
+              <span className="pointer-events-none absolute inset-0">
+                <iframe
+                  src="https://giphy.com/embed/QKSXTlCRK0r1N2NnkV"
+                  width="100%"
+                  height="100%"
+                  className="absolute border-none"
+                />
+              </span>
             </div>
           </TextWithImage>
           <TextWithImage
@@ -125,21 +111,15 @@ const TextWithImageExample = () => {
             text={["time to", "sleep"]}
             ref={root}
           >
-            <div
-              style={{
-                width: "100%",
-                height: 0,
-                paddingBottom: "56%",
-                position: "relative",
-              }}
-            >
-              <iframe
-                src="https://giphy.com/embed/xT8qBvH1pAhtfSx52U"
-                width="100%"
-                height="100%"
-                style={{ position: "absolute" }}
-                frameBorder="0"
-              />
+            <div className="w-full relative h-0 pb-[56%]">
+              <span className="pointer-events-none absolute inset-0">
+                <iframe
+                  src="https://giphy.com/embed/xT8qBvH1pAhtfSx52U"
+                  width="100%"
+                  height="100%"
+                  className="absolute border-none"
+                />
+              </span>
             </div>
           </TextWithImage>
         </div>
