@@ -19,9 +19,13 @@ import remarkGfm from "remark-gfm";
 import { ThreeDCard } from "./examples/3d-card";
 import { MatrixBox } from "./examples/matrix-box";
 import { SVGDrawing } from "./examples/svg-drawing";
+import { TextWithImageExample } from "./examples/text-with-image";
 import { TimeTooltipPreview } from "./examples/time-tooltip";
 
 const components: MDXComponents = {
+  TextWithImageExample: () => {
+    return <TextWithImageExample />;
+  },
   ThreeDCard: () => {
     return <ThreeDCard />;
   },
