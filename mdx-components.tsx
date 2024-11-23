@@ -17,12 +17,16 @@ import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 
 import { ThreeDCard } from "./examples/3d-card";
+import { ClipPathBlock } from "./examples/clip-path-box";
 import { MatrixBox } from "./examples/matrix-box";
 import { SVGDrawing } from "./examples/svg-drawing";
 import { TextWithImageExample } from "./examples/text-with-image";
 import { TimeTooltipPreview } from "./examples/time-tooltip";
 
 const components: MDXComponents = {
+  ClipPathBlock: () => {
+    return <ClipPathBlock />;
+  },
   TextWithImageExample: () => {
     return <TextWithImageExample />;
   },
@@ -89,7 +93,7 @@ const components: MDXComponents = {
         href={href}
         target="_blank"
         underline
-        className="decoration-foreground inline-flex items-center gap-1"
+        className="!decoration-foreground inline-flex items-center gap-1 underline-offset-4"
       >
         {children}
         <svg
