@@ -13,9 +13,7 @@ export const Breadcrumb = () => {
   const paths = pathname
     .split("/")
     .filter((path) => path !== "")
-    .map((path) =>
-      path.replace(/-/g, " ").replace(/\b\w/g, (char) => char.toUpperCase()),
-    );
+    .map((path) => path.replace(/\b\w/g, (char) => char.toLowerCase()));
 
   return (
     <div
@@ -24,7 +22,7 @@ export const Breadcrumb = () => {
       )}
     >
       <Link className="text-muted" href="/">
-        Home
+        home
       </Link>
       <ChevronRightIcon className="text-muted" />
       {paths.map((path, index) => {

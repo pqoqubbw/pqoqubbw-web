@@ -33,7 +33,7 @@ function PostNavigation({ posts }: PostNavigationProps) {
           href={`${previous.slug}`}
           className="flex w-full flex-col gap-1 text-left"
         >
-          <span className="text-muted">Previous</span>
+          <span className="text-muted">previous</span>
           <span>{previous.title}</span>
         </Link>
       )}
@@ -42,7 +42,7 @@ function PostNavigation({ posts }: PostNavigationProps) {
           href={`${next.slug}`}
           className="flex w-full flex-col gap-1 text-right"
         >
-          <span className="text-muted">Next</span>
+          <span className="text-muted">next</span>
           <span>{next.title}</span>
         </Link>
       )}
