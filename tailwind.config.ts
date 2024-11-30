@@ -145,8 +145,7 @@ const config: Config = {
         },
       },
       fontFamily: {
-        inter: ["var(--font-inter)"],
-        apple: ["var(--font-apple)"],
+        mono: ["var(--font-mono)"],
       },
       borderRadius: {
         small: "var(--radius-small)",

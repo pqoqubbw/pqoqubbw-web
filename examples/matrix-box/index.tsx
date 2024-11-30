@@ -72,7 +72,7 @@ export function MatrixBox({ valueName }: ValueTitleProps) {
   }, [getRandomChar, updateLetter]);
 
   return (
-    <div className="w-full max-w-2xl border rounded-base border-border p-[7px_7px_10px_7px] overflow-hidden font-mono font-medium text-sm leading-6 uppercase tracking-[0.3em] break-all relative">
+    <div className="w-full max-w-2xl border rounded-base border-border p-[7px_7px_10px_7px] overflow-hidden font-mono text-sm leading-6 uppercase tracking-[0.3em] break-all relative">
       <div className="w-full overflow-hidden text-center h-[60px]">
         {letters.map((letter, index) => (
           <AnimatePresence key={index} initial={false} mode="popLayout">
@@ -91,7 +91,7 @@ export function MatrixBox({ valueName }: ValueTitleProps) {
           </AnimatePresence>
         ))}
       </div>
-      <div className="absolute inset-0 flex font-bold items-center justify-center text-center text-white whitespace-pre">
+      <div className="absolute inset-0 flex items-center justify-center text-center text-white whitespace-pre">
         {valueName.split("").map((char, index) => (
           <span key={index} className="inline-block relative select-none">
             {char}

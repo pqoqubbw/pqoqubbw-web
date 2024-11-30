@@ -20,7 +20,7 @@ export const Breadcrumb = () => {
   return (
     <div
       className={cn(
-        "mt-0 mb-4 flex w-full items-center gap-1 align-middle font-normal text-small",
+        "mt-0 mb-4 flex w-full items-center gap-1 align-middle text-small",
       )}
     >
       <Link className="text-muted" href="/">

@@ -100,7 +100,7 @@ const ClipPathBlock = () => {
       className="border-border p-12 relative border-[2px] h-[250px] flex items-center justify-center"
     >
       <Corners />
-      <h2 className="text-4xl text-foreground font-bold font-mono leading-relaxed m-0">
+      <h2 className="text-4xl text-foreground font-mono leading-relaxed m-0">
         it's time to ship something
       </h2>
       <motion.div
@@ -127,7 +127,7 @@ const ClipPathBlock = () => {
         }}
         className="absolute p-12 flex items-center justify-center select-none pointer-events-none w-full h-full"
       >
-        <h3 className="text-4xl text-background font-bold font-mono leading-relaxed m-0 [text-shadow:_-1px_-1px_0_theme(colors.purple.400),_1px_-1px_0_theme(colors.purple.400),_-1px_1px_0_theme(colors.purple.400),_1px_1px_0_theme(colors.purple.400)]">
+        <h3 className="text-4xl text-background font-mono leading-relaxed m-0 [text-shadow:_-1px_-1px_0_theme(colors.purple.400),_1px_-1px_0_theme(colors.purple.400),_-1px_1px_0_theme(colors.purple.400),_1px_1px_0_theme(colors.purple.400)]">
           it's time to ship something
         </h3>
       </motion.div>

@@ -103,15 +103,6 @@
   html {
     @apply text-default text-foreground bg-background;
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      @apply font-medium;
-    }
-
     h2,
     h3,
     sub,

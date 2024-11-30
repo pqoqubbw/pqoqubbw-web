@@ -31,9 +31,7 @@ const ThreeDCard = () => {
           height={150}
           className="pointer-events-none select-none"
         />
-        <h3 className="text-base font-medium text-foreground m-0">
-          scan to visit
-        </h3>
+        <h3 className="text-base text-foreground m-0">scan to visit</h3>
       </motion.div>
       <div
         className="absolute inset-0 pointer-events-none rounded-2xl blur-md dark:hidden"
