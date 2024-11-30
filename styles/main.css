@@ -27,7 +27,7 @@
   :root {
     --bg: var(--gray-1);
     --fg: var(--gray-12);
-    --muted: var(--gray-8);
+    --muted: var(--gray-9);
     --border: var(--gray-4);
     --scrollbar-thumb: var(--gray-4);
     --scrollbar-track: transparent;
